@@ -16,9 +16,10 @@ namespace Freyja
         protected void Application_Start()
         {
 
-            using (var db = new Model.Data.IdentityDbContext())
+            // init identity database
+            using (var ctx = new Model.Data.IdentityDbContext())
             {
-                var hasUsers = db.Users.Any();
+                ctx.Database.Initialize(false);
             }
 
             //AreaRegistration.RegisterAllAreas();
