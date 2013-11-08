@@ -80,6 +80,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.0.0\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.Tracing">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.0.0\lib\net45\System.Web.Http.Tracing.dll</HintPath>
     </Reference>
@@ -103,13 +106,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\Data\IdentityDbContext.cs" />
-    <Compile Include="Model\Identity\Entities\Role.cs" />
-    <Compile Include="Model\Identity\Entities\UserRole.cs" />
+    <Compile Include="Model\Identity\Entities\Claim.cs" />
+    <Compile Include="Model\Identity\Entities\UserClaim.cs" />
     <Compile Include="Model\Identity\Entities\UserSecret.cs" />
     <Compile Include="Model\Identity\Entities\User.cs" />
     <Compile Include="Model\Identity\Services\IdentityService.cs" />
@@ -131,7 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Model\Identity\Value Objects\" />
     <Folder Include="Model\Journal\Services\" />
   </ItemGroup>

@@ -7,13 +7,13 @@ using System.Web;
 
 namespace Freyja.Model.Identity
 {
-    public class Role
+    public class Claim
     {
 
         public string Id { get; set; }
 
 
-        public Role(string roleName)
+        public Claim(string roleName)
         {
             Id = roleName;
         }

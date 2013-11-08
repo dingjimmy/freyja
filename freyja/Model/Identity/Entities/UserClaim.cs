@@ -9,14 +9,14 @@ using System.Web;
 
 namespace Freyja.Model.Identity
 {
-    public class UserRole
+    public class UserClaim
     {
 
         [Key, Column(Order = 1)]
         public string UserId { get; set; }
 
         [Key, Column(Order = 0)]
-        public string RoleId { get; set; }        
+        public string ClaimId { get; set; }        
         
     }
 }

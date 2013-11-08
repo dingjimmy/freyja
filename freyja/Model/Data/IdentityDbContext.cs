@@ -16,7 +16,7 @@ namespace Freyja.Model.Data
 
         public DbSet<UserSecret> Secrets { get; set; }
 
-        public DbSet<Role> Roles { get; set; }
+        public DbSet<Claim> Roles { get; set; }
 
     }
 

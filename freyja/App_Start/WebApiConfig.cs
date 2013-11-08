@@ -1,10 +1,12 @@
-﻿using System;
+﻿// Copyright (c) James Dingle
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web.Http;
-using Newtonsoft.Json.Serialization;
-using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json.Serialization;
 
 namespace Freyja
 {
@@ -16,7 +18,7 @@ namespace Freyja
 
             // Configure Web API to use only bearer token authentication. 
             config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthBearerOptions.AuthenticationType));
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
 
             // Configure Web API to allow routes to be mapped using attributes
