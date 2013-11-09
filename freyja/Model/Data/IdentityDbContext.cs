@@ -16,7 +16,23 @@ namespace Freyja.Model.Data
 
         public DbSet<UserSecret> Secrets { get; set; }
 
-        public DbSet<Claim> Roles { get; set; }
+        public DbSet<Claim> Claims { get; set; }
+
+
+        public IdentityDbContext()
+            :base("data-source=.\localdb(v11);)
+        {
+           
+        }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<User>().HasMany((u) => u.Claims).WithMany();
+            
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 

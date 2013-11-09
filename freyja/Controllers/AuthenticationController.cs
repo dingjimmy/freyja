@@ -37,6 +37,9 @@ namespace Freyja.Controllers
                 {
 
                     var identity = new ClaimsIdentity(Startup.OAuthBearerOptions.AuthenticationType);
+
+                    var claims = from c in ctx.Claims, uc in ctx.user
+                                 where c.
                     identity.AddClaim(new Claim(ClaimTypes.Name, login.UserName));
 
 

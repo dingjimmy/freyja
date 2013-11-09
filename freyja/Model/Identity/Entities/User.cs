@@ -27,6 +27,8 @@ namespace Freyja.Model.Identity
 
         public Currency Currency { get; set; }
 
+        public ICollection<Claim> Claims { get; set; }
+
 
 
 
