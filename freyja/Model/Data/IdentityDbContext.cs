@@ -12,6 +12,7 @@ namespace Freyja.Model.Data
 
     public class IdentityDbContext:DbContext
     {
+
         public DbSet<User> Users { get; set; }
 
         public DbSet<UserSecret> Secrets { get; set; }
@@ -19,11 +20,14 @@ namespace Freyja.Model.Data
         public DbSet<Claim> Claims { get; set; }
 
 
-        public IdentityDbContext()
-            :base("data-source=.\localdb(v11);)
-        {
-           
-        }
+
+        // Primary Constructor
+        public IdentityDbContext(string connectionString) : base(connectionString) { }
+
+
+        // Alternative Constructor - for mocking and testing purposes
+        public IdentityDbContext() : base("Server=(localdb)\v11.0;Database=Freyja.Identity;Integrated Security=true;MultipleActiveResultSets=true;") { }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
